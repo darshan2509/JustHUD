@@ -50,9 +50,9 @@ class JustHUD: UIView {
         shared.loaderColor = color
     }
     
-    class func setBackgroundColor(color: UIColor, automaticTextColor: Bool?) {
+    class func setBackgroundColor(color: UIColor, automaticTextColor: Bool = false) {
         shared.backColor = color
-        if automaticTextColor ?? false {
+        if automaticTextColor {
             shared.headerColor = getComplementaryForColor(color: color, relativeTo: shared.headerColor)
             shared.footerColor = getComplementaryForColor(color: color, relativeTo: shared.footerColor)
             shared.loaderColor = getComplementaryForColor(color: color, relativeTo: shared.loaderColor)
@@ -259,9 +259,9 @@ class JustHUD: UIView {
         let relative = CIColor(color: relativeTo)
         
         // get the current values and make the difference from white
-        let compRed = ((1.0 - original.red) + relative.red)/2.0
-        let compGreen = ((1.0 - original.green) + relative.green)/2.0
-        let compBlue = ((1.0 - original.blue) + relative.blue)/2.0
+        let compRed = ((1.0 - original.red) + 0.3 * relative.red)/1.3
+        let compGreen = ((1.0 - original.green) + 0.3 * relative.green)/1.3
+        let compBlue = ((1.0 - original.blue) + 0.3 * relative.blue)/1.3
         
         return UIColor(red: compRed, green: compGreen, blue: compBlue, alpha: 1.0)
     }
