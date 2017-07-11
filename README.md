@@ -53,4 +53,5 @@ if JustHUD.shared.isActive {
 }
 ````
 
-
+## Contribution
+[Contribute to JustHUD](https://github.com/shubh10/JustHUD/blob/master/CONTRIBUTING.md)
